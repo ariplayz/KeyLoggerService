@@ -1,3 +1,4 @@
 <Solution>
-  <Project Path="KeyLoggerService/KeyLoggerService.csproj" Id="1ab9e022-70a1-4b67-9b04-84fca209a1e1" />
+  <Project Path="KeyLoggerService/KeyLoggerService.csproj" />
+  <Project Path="KeyLoggerInstaller/KeyLoggerInstaller.wixproj" />
 </Solution>
