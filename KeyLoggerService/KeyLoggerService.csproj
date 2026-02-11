@@ -31,6 +31,10 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
   </PropertyGroup>
   <Target Name="BuildMSI" AfterTargets="Build" Condition="'$(Configuration)' == 'Release' AND '$(BuildingInsideKeyLoggerService)' == ''">
     <MSBuild Projects="..\KeyLoggerInstaller\KeyLoggerInstaller.wixproj" Properties="Configuration=$(Configuration);Platform=$(Platform);BuildingInsideKeyLoggerService=true" />
