@@ -1,5 +1,0 @@
-﻿<Project Sdk="WixToolset.Sdk/5.0.0">
-  <ItemGroup>
-    <ProjectReference Include="..\KeyLoggerService\KeyLoggerService.csproj" />
-  </ItemGroup>
-</Project>
